@@ -7,28 +7,31 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       line-height: 1.5;
       color: #333;
+      padding: 0 20px;
     }
     h1 {
-      color: #00008b;          /* tumman sininen */
+      color: #00008b;
       margin-bottom: 5px;
-      font-size: 2.2em;
     }
     .email {
       color: #4169e1;
-      margin-top: 0;
+      font-size: 1.1em;
     }
-    .profile-pic {
+    .profile {
+      float: right;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .profile img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 20px;
     }
     hr {
       border: 0;
@@ -38,43 +41,60 @@
     .section-title {
       color: #00008b;
       font-size: 1.4em;
-      margin-top: 30px;
+      margin: 30px 0 10px;
       border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
     }
     ul {
-      padding-left: 20px;
+      padding-left: 25px;
       margin: 10px 0;
     }
-    .two-columns {
+    .columns {
       display: flex;
       justify-content: space-between;
-      margin-top: 10px;
+      gap: 30px;
     }
-    .two-columns > div {
-      width: 48%;
+    .columns > div {
+      flex: 1;
+    }
+    .pdf-link {
+      display: inline-block;
+      background: #00008b;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .pdf-link:hover {
+      background: #000066;
     }
   </style>
 </head>
 <body>
 
-  <img src="profiilikuva.jpg" alt="Elmo Ahonen" class="profile-pic">
+  <div class="profile">
+    <img src="kuva.jpg" alt="Elmo Ahonen">
+  </div>
 
   <h1>Elmo Ahonen</h1>
   <p class="email">elmonster7400@gmail.com</p>
 
   <hr>
 
+  <p><strong><a href="CV.pdf" target="_blank" class="pdf-link">Avaa / Lataa CV PDF-muodossa →</a></strong></p>
+
   <h2 class="section-title">TYÖKOKEMUS</h2>
   <h3>Voimistelijavalmentaja</h3>
-  <p>1.1.2020 – Nyky päivä</p>
+  <p>1.1.2020 – Nykypäivä</p>
   <ul>
-    <li>Valmennan 8–12v aloitteellista kilparyhmää</li>
-    <li>Olen valmentanut kaikenlaisia ryhmiä tässä parin vuoden aikana</li>
+    <li>Valmennan 8–12-vuotiaiden aloittelevaa kilparyhmää</li>
+    <li>Olen valmentanut kaikenlaisia ryhmiä parin vuoden aikana</li>
     <li>Opetin liikkeitä, tekniikkaa ja turvallista harjoittelua</li>
   </ul>
 
-  <h2 class="section-title">Osaamiset mitä sain valmentajana</h2>
+  <h2 class="section-title">Osaamiset valmentajana</h2>
   <ul>
     <li>Vastuunotto ja luotettavuus</li>
     <li>Lasten/nuorten kanssa työskentely</li>
@@ -82,21 +102,17 @@
     <li>Ryhmän ohjaaminen</li>
     <li>Kielitaito: Suomi ja Englanti</li>
     <li>Uimahyppyjä harrastanut 7 vuotta</li>
-    <li>Tietokoneita osaan käyttää hyvin</li>
+    <li>Tietokoneiden hyvä käyttötaito</li>
   </ul>
 
-  <div class="two-columns">
+  <div class="columns">
     <div>
       <h2 class="section-title">KOULUTUS</h2>
       <h3>Pohjankartanon yläaste</h3>
       <p>8.2021 – 6.2025</p>
 
       <h3>Tieto ja viestintätekniikka</h3>
-      <p>8.2025 – Nyky päivä</p>
-    </div>
-
-    <div>
-      <!-- Tähän voit lisätä jotain muuta oikealle puolelle jos haluat -->
+      <p>8.2025 – Nykypäivä</p>
     </div>
   </div>
 
