@@ -267,10 +267,6 @@
             animation: fadeInUp 1s ease 0.4s both;
         }
 
-        .hero-image {
-            display: none;
-        }
-
         /* ===== GALLERY SECTION ===== */
         .gallery-section {
             background: linear-gradient(135deg, #f1f8e9 0%, #e3f2fd 100%);
@@ -360,6 +356,14 @@
             color: var(--primary);
             width: 20px;
             text-align: center;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #ff6b6b;
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
         }
 
         .cv-section {
@@ -488,6 +492,51 @@
             background: white;
         }
 
+        .project-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .project-image i {
+            font-size: 5rem;
+            color: var(--primary);
+        }
+
+        .project-details h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tag {
+            background: #e8f5e9;
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         .projects-content {
             max-width: 800px;
             margin: 0 auto;
@@ -502,12 +551,6 @@
             font-size: 4rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-        }
-
-        .projects-content h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
         }
 
         .upcoming-projects {
@@ -648,6 +691,13 @@
             font-size: 0.85rem;
         }
 
+        .ai-note {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
         /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from {
@@ -685,7 +735,7 @@
                 font-size: 3rem;
             }
             
-            .about-content, .skills-container, .footer-content {
+            .about-content, .skills-container, .footer-content, .project-showcase {
                 grid-template-columns: 1fr;
             }
             
@@ -798,7 +848,7 @@
                     <li><a href="#about">Minusta & CV</a></li>
                     <li><a href="#skills">Taidot</a></li>
                     <li><a href="#projects">Projektit</a></li>
-                    <li><a href="#gallery">Galleria</a></li>
+                    <li><a href="#gallery">Kuvagalleria</a></li>
                     <li><a href="#interests">Harrastukset</a></li>
                     <li><a href="#contact">Yhteys</a></li>
                 </ul>
@@ -812,9 +862,10 @@
             <div class="hero-content">
                 <h1>Hei, olen <span class="highlight">Elmo Ahonen</span></h1>
                 <p>Tervetuloa henkilökohtaisille kotisivuilleni! Olen tieto- ja viestintätekniikan opiskelija sekä intohimoinen voimisteluvalmentaja. Tällä sivustolla esittelen osaamistani ja tulevaisuuden suunnitelmia.</p>
+                <p><em>Tämä sivusto on luotu tekoälyn avustuksella oppimisen ja esittelyn vuoksi.</em></p>
                 <div class="hero-btns">
                     <a href="#about" class="btn btn-primary">Tutustu CV:hen</a>
-                    <a href="#contact" class="btn btn-outline">Ota Yhteyttä</a>
+                    <a href="#projects" class="btn btn-outline">Katso Projektit</a>
                 </div>
             </div>
         </div>
@@ -903,6 +954,7 @@
                             <i class="fas fa-phone"></i>
                             <span>+358 40 123 4567</span>
                         </p>
+                        <p class="note">Huom: Puhelinnumero on esimerkki, eikä ole todellinen.</p>
                         <p>
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Helsinki, Suomi</span>
@@ -1017,16 +1069,40 @@
     <section id="projects" class="projects animate-on-scroll">
         <div class="container">
             <div class="section-title">
-                <h2>Tulevat Projektit</h2>
-                <p>Suunnitelmat ja ideat kehitystyöhön</p>
+                <h2>Projektini</h2>
+                <p>Käytännön työni ja tulevat ideat</p>
+            </div>
+            
+            <!-- Simple Project Showcase -->
+            <div class="project-showcase">
+                <div class="project-image">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="project-details">
+                    <h3>Yksinkertainen Laskinsovellus</h3>
+                    <p>Ensimmäinen toimiva web-sovellus, jonka kehitin HTML, CSS ja JavaScript avulla. Sovellus suorittaa peruslaskutoimituksia ja sisältää selkeän käyttöliittymän.</p>
+                    <div class="project-tech">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Web Development</span>
+                    </div>
+                    <p><strong>Ominaisuudet:</strong></p>
+                    <ul class="cv-list">
+                        <li>Peruslaskutoimitukset (+, -, ×, ÷)</li>
+                        <li>Responsiivinen design mobiililaitteille</li>
+                        <li>Virheenkäsittely ja käyttäjäystävällisyys</li>
+                        <li>Näppäimistön ja hiiren tuki</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="projects-content">
                 <div class="projects-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3>Projektit kehityksessä</h3>
-                <p>Opiskeluni aikana olen keskittynyt perusasioiden oppimiseen, ja olen innokas aloittamaan ensimmäiset projektini pian. Alla on suunnitelmia tuleville projekteille:</p>
+                <h3>Tulevat Projektit</h3>
+                <p>Opiskeluni aikana olen keskittynyt perusasioiden oppimiseen, ja olen innokas aloittamaan uusia projekteja. Alla on suunnitelmia tuleville projekteille:</p>
                 
                 <div class="upcoming-projects">
                     <h4><i class="fas fa-list-check"></i> Tulevat ideat</h4>
@@ -1040,7 +1116,7 @@
                 </div>
                 
                 <p style="margin-top: 1.5rem; font-style: italic;">
-                    "Hyvä alku on puoli työtä" - suomalainen sanonta
+                    "Pienet askeleet johtavat suuriin saavutuksiin"
                 </p>
             </div>
         </div>
@@ -1050,28 +1126,28 @@
     <section id="gallery" class="gallery-section animate-on-scroll">
         <div class="container">
             <div class="section-title">
-                <h2>Pelaamisgalleria</h2>
-                <p>Kuvia ja inspiraatiota suosikkipeluistäni</p>
+                <h2>Kuvagalleria</h2>
+                <p>Inspiraatiota ja kiinnostuksen kohteitani</p>
             </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teknologia ja Koodaus">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Voimistelu ja Liikunta">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strategiapelit">
+                </div>
+                <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming Setup">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="eSports">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ohjelmointi Tila">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strategy Games">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Game Development">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming Community">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team Gaming">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tiimityö ja eSports">
                 </div>
             </div>
         </div>
@@ -1127,9 +1203,6 @@
                         <a href="mailto:elmonster7400@gmail.com" title="Sähköposti">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="#contact" title="Puhelin">
-                            <i class="fas fa-phone"></i>
-                        </a>
                     </div>
                 </div>
                 
@@ -1157,7 +1230,6 @@
                     <h3>Yhteystiedot</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> elmonster7400@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +358 40 123 4567</li>
                         <li><i class="fas fa-map-marker-alt"></i> Helsinki, Suomi</li>
                     </ul>
                 </div>
@@ -1165,6 +1237,7 @@
             
             <div class="copyright">
                 <p>&copy; 2023 Elmo Ahonen. Kaikki oikeudet pidätetään. | Sivusto päivitetty viimeksi: Marraskuu 2023</p>
+                <p class="ai-note">Tämä sivusto on luotu tekoälyn avustuksella oppimisen ja esittelyn vuoksi.</p>
             </div>
         </div>
     </footer>
